@@ -1,30 +1,33 @@
-const { it, describe } = require('node:test');
-const { expect } = require('process');
-const employee = require('../lib/employee.js')
+const Employee = require('../lib/employee.js')
 
 //describe -> it -> expect.toEqual 
-describe('Employee', () => {
-    it('Should return the employee name')
-        const employee = 'Denart';
-        const dummyEmp = new employee
+describe('Get', () => {
+it('Get employee name', () => {    
+    const empName = 'denart'
+    const dummyEmp = new Employee( 'denart', 1, 'mail@mail.com');
+    expect(dummyEmp.getName()).toBe(empName);
+});
 
-        expect(dummyEmp.genName()).toEqual(employee)
-    });
-    it('Should return the employee ID')
-        const empID = 'Denart';
-        const dummyEmp = new employee
+it('Get employee id', () => {
+    const empId = 1;
+    const dummyEmp = new Employee("denart", 1, "mail@mail.com");
+    expect(dummyEmp.getId()).toBe(empId);
 
-        expect(dummyEmp.genName()).toEqual(employee)
-    });
-    it('Should return the employee email')
-        const empEmail = 'Denart';
-        const dummyEmp = new employee
+});
 
-        expect(dummyEmp.genName()).toEqual(employee)
-    });
-    it('Should return the employee position')
-        const empPos = 'Denart';
-        const dummyEmp = new employee
+it('Get employee email', () => {
+    const empEmail = 'mail@mail.com';
+    const dummyEmp = new Employee("denart", 1, "mail@mail.com");
+    expect(dummyEmp.getEmail()).toBe(empEmail);
 
-        expect(dummyEmp.genName()).toEqual(employee)
-    });
+});
+
+
+it('Get employee role', () => {
+    const empRole = 'Employee';
+    const dummyEmp = new Employee("denart", 1, "mail@mail.com");
+    expect(dummyEmp.getRole()).toBe(empRole);
+
+});
+
+});
