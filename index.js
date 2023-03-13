@@ -1,10 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Manager = require("../lib/manager.js");
-const Engineer = require("../lib/engineer.js");
-const Intern = require("../lib/intern.js");
+const Manager = require("./lib/manager.js");
+const Engineer = require("./lib/engineer.js");
+const Intern = require("./lib/intern.js");
 let empInfo = [];
-const template = require("../src/template.js");
+const template = require("./src/template.js");
 const { genHTML } = template;
 
 inquirer
@@ -12,11 +12,7 @@ inquirer
     { type: "input", name: "manName", message: "What is the manager name?" },
     { type: "input", name: "manId", message: "What is the manager ID?" },
     { type: "input", name: "manEmail", message: "What is the manager email?" },
-    {
-      type: "input",
-      name: "manOfficeNum",
-      message: "What is the manager office number?",
-    },
+    {type: "input", name: "manOfficeNum", message: "What is the manager office number?",}
   ])
 
   .then((answers) => {
