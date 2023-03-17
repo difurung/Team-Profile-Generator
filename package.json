@@ -6,5 +6,24 @@
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "name": "team-profile-generator",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/difurung/Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/difurung/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/difurung/Team-Profile-Generator#readme"
 }

@@ -7,6 +7,39 @@ let empInfo = [];
 const template = require("./src/template.js");
 const { genHTML } = template;
 
+
+// Add member function
+
+function addMember() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "New member?",
+        name: 'members',
+        answers: ["Manager", "Engineer", "Intern", "Done"],
+      },
+    ])
+    .then((answers) => {
+  switch(answers.members) {
+    case "Engineer":
+      manPrompt();
+      break;
+      case "Engineer":
+        engiPrompt();
+        break;
+    case "Intern":
+      intPrompt();
+      break;
+    default:
+      generateHTML();
+      break;
+  }
+    });
+}
+
+
+function manPrompt() {
 inquirer
   .prompt([
     { type: "input", name: "manName", message: "What is the manager name?" },
@@ -25,29 +58,8 @@ inquirer
     empInfo.push(manInfo);
     addMember();
   });
-
-// Add member function
-
-function addMember() {
-  inquirer
-    .prompt([
-      {
-        type: "list",
-        message: "members",
-        choices: ["Engineer", "Intern", "Done"],
-      },
-    ])
-    .then((answers) => {
-      if (answers.members === "Engineer") {
-        engiPrompt();
-      } else if (answers.members === "Intern") {
-        intPrompt();
-      } else {
-        generateHTML();
-        return;
-      }
-    });
 }
+
 
 // Add engineer
 function engiPrompt() {
@@ -81,7 +93,7 @@ function engiPrompt() {
         answers.engiEmail,
         answers.engiGithub
       );
-      employeeinfo.push(engiInfo);
+      empinfo.push(engiInfo);
       addMember();
     });
 }
@@ -119,7 +131,7 @@ function intPrompt() {
         answers.engiEmail,
         answers.engiGithub
       )
-      employeeInfo.push(intInfo)
+      empInfo.push(intInfo)
       addMember();
     });
 }
