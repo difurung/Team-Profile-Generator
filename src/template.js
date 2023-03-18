@@ -29,7 +29,7 @@ function genHTMLInfo(empInfo) {
         ].getGithub()}" target = "_blank" rel="noopener noreferrer">Engineer's GitHub</a></div> `;
         employeeHTML += genGithub;
         } else if (empInfo[i].school !== undefined) {
-        const genSchool = `<div><h3>School: ${empInfo[i].getSchool()}</h3></div>`;
+        const genSchool = `<div><h4>School: ${empInfo[i].getSchool()}</h4></div>`;
         employeeHTML += genSchool;
         }
   }
