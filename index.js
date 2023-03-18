@@ -5,7 +5,7 @@ const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern.js");
 let empInfo = [];
 const template = require("./src/template.js");
-const { genHTML } = template;
+const { generateHTML } = template;
 
 
 // Add member function
@@ -17,12 +17,12 @@ function addMember() {
         type: "list",
         message: "New member?",
         name: 'members',
-        answers: ["Manager", "Engineer", "Intern", "Done"],
+        choices: ["Manager", "Engineer", "Intern", "Done"],
       },
     ])
-    .then((answers) => {
-  switch(answers.members) {
-    case "Engineer":
+    .then((choices) => {
+  switch(choices.members) {
+    case "Manager":
       manPrompt();
       break;
       case "Engineer":
@@ -32,7 +32,7 @@ function addMember() {
       intPrompt();
       break;
     default:
-      generateHTML();
+      genHTML();
       break;
   }
     });
@@ -93,7 +93,7 @@ function engiPrompt() {
         answers.engiEmail,
         answers.engiGithub
       );
-      empinfo.push(engiInfo);
+      empInfo.push(engiInfo);
       addMember();
     });
 }
@@ -126,18 +126,19 @@ function intPrompt() {
     ])
     .then((answers) => {
       let intInfo = new Intern(
-        answers.engiName,
-        answers.engiId,
-        answers.engiEmail,
-        answers.engiGithub
-      )
+        answers.intName,
+        answers.intId,
+        answers.intEmail,
+        answers.intSchool      )
       empInfo.push(intInfo)
       addMember();
     });
 }
 
-function generateHTML(){
-  let html = genHTML(employeeInfo);
-fs.writeFile('..dist/team.html', html, (err) => 
+function genHTML(){
+  let html = generateHTML(empInfo);
+fs.writeFile('dist/team.html', html, (err) => 
 err ? console.log(err): console.log('Team profiles have been created'))  
 };
+
+addMember()
