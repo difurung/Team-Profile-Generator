@@ -5,12 +5,13 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Access](#access)
 - [Credits](#credits)
 - [License](#license)
 
 ## Description
 
-This application was designed to be a team profile generator using JSNode and Inquirer. All that is needed is to answer a few questions and it will generate a markdown template with the added information. 
+This application was designed to be a team profile generator using JSNode and Inquirer. All that is needed is to answer a few questions and it will generate an HTML template with the added information. 
 
 
 ## Installation
@@ -27,12 +28,16 @@ To use:
 
     - The HTML will be generated in the dist folder.
 
+## Access
 
-# Video Demonstration
-The demonstration of the application can be found [Here](vid here)
+[Github Repository](https://github.com/difurung/Team-Profile-Generator)
 
-# Screenshot
-![Screenshot of application](screenshot here)
+
+### Video Demonstration
+The demonstration of the application can be found [Here](https://watch.screencastify.com/v/7Hy7rHMvQKbbd3ySRXag)
+
+## Screenshot
+![Screenshot of application](dist/images/team%20profile%20generator.png))
 
 
 ## License
